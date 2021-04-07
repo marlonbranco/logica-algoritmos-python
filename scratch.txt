@@ -1,0 +1,108 @@
+# Práticando
+# Exercício 1 Aula prática 4
+adicao = "+"
+subtracao = "-"
+multiplicacao = "*"
+divisao = "*"
+print("CALCULADORA")
+print("+ Adição")
+print("- Subtração")
+print("* Multiplicação")
+print("/ Divisão")
+print("Digite 'sair' se deseja encerrar o programa")
+
+while True:
+    operacao = input("Digite a operação desejada:")
+
+    if operacao == "sair":
+        break
+
+    valor1 = int(input("Digite o primeiro valor:"))
+    valor2 = int(input("Digite o segundo valor:"))
+
+    if operacao == adicao or operacao == subtracao or operacao == multiplicacao or operacao == divisao:
+        if operacao == adicao:
+            resultado = valor1 + valor2
+            print("{} + {} = {}".format(valor1, valor2, resultado))
+            continue
+        elif operacao == subtracao:
+            resultado = valor1 - valor2
+            print("{} - {} = {}".format(valor1, valor2, resultado))
+            continue
+        elif operacao == multiplicacao:
+            resultado = valor1 * valor2
+            print("{} x {} = {}".format(valor1, valor2, resultado))
+            continue
+        elif operacao == divisao:
+            resultado = valor1 / valor2
+            print("{} / {} = {}".format(valor1, valor2, resultado))
+    else:
+        print("Operação inválida.")
+
+print("Encerrando o programa.")
+
+# Exercício 2 - Aula prática 4
+
+print("Cálculo de cédulas.")
+print("Digite 'sair' para encerrar o programa.")
+
+while True:
+    valor = input("Digite um valor em R$ ")
+    if valor == "sair":
+        break
+    valor = int(valor)
+    if valor >= 100:
+        cedulas100 = valor // 100
+        valor -= cedulas100 * 100
+        print("{} cédulas de 100".format(cedulas100))
+    if valor >= 50:
+        cedulas50 = valor // 50
+        valor -= cedulas50 * 50
+        print("{} cédulas de 50".format(cedulas50))
+    if valor >= 20:
+        cedulas20 = valor // 20
+        valor -= cedulas20 * 20
+        print("{} cédulas de 20".format(cedulas20))
+    if valor >= 5:
+        cedulas5 = valor // 5
+        valor -= cedulas5 * 5
+        print("{} cédulas de 5".format(cedulas5))
+    if valor:
+        cedulas1 = valor
+        print("{} cédulas de 1".format(cedulas1))
+
+print("Encerrando o programa.")
+
+# Exercício 3 - Aula prática 4
+totalPessoas = 0
+totalIngressos = 0
+totalIdades = 0
+
+print("Venda de ingressos para o Cinema.")
+print("Digite 'sair' para finalizar o programa.")
+
+while True:
+    idade = input('Insira a idade: ')
+    if idade == 'sair':
+        break
+    idade = int(idade)
+    if idade < 3:
+        ingresso = 0
+        print("Ingresso gratuíto!")
+    else:
+        if idade > 12:
+            ingresso = 30
+            print("Valor do ingresso: R$ {}".format(float(ingresso)))
+        else:
+            ingresso = 15
+            print("Valor do ingresso: R$ {}".format(float(ingresso)))
+
+    totalPessoas += 1
+    totalIngressos += ingresso
+    totalIdades += idade
+
+mediaIdades = totalIdades / totalPessoas
+
+print("Total de pessoas: {}".format(totalPessoas))
+print("Valor total dos ingressos: R${}".format(float(totalIngressos)))
+print("A média das idades é: {}".format(totalPessoas))
