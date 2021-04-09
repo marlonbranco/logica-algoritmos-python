@@ -496,3 +496,107 @@
 # print("Total de pessoas: {}".format(totalPessoas))
 # print("Valor total dos ingressos: R${}".format(float(totalIngressos)))
 # print("A média das idades é: {}".format(totalPessoas))
+
+## Aula 5 - funções
+# def borda(palavra):
+#     tamanho = len(palavra)
+#
+#     if tamanho:
+#         print("+" + "-" * tamanho + "+")
+#         print("|" + palavra + "|")
+#         print("+" + "-" * tamanho + "+")
+#
+# borda("Python é muito legal!")
+
+## Exercício 2 - Aula 5
+# def validaString(palavra, min, max):
+#     s1 = input(palavra)
+#     tam = len(s1)
+#     while ((tam < min) or (tam > max)):
+#         s1 = input(palavra)
+#         tam = len(s1)
+#     print("Palavra validada")
+#
+#     return s1
+#
+# x = validaString("Digite uma palavra:", 10, 30)
+# print("Você digitou a string {}. \n Dado válido. Encerrando o programa...".format(x))
+
+## Exemplos de tratamento de excessões
+# while True:
+#     try:
+#         numero = int(input("Digite um número:"))
+#     except ValueError:
+#         print("Oops! Número inválido. Tente novamente.")
+
+# def divisao():
+#     try:
+#         valor1 = int(input('Digite o primeiro valor: '))
+#         valor2 = int(input('Digite o segundo valor: '))
+#         resultado = valor1 / valor2
+#     except ZeroDivisionError:
+#         print('Oops! Erro de divisão por 0...')
+#     except:
+#         print('Algo deu errado.')
+#     else:
+#         return resultado
+#     finally:
+#         print("Sempre executará!")
+#
+# print(divisao())
+
+## Funções dentro de funções
+# def imprimeComCondicao(num, fcond):
+#     if fcond(num):
+#         print(num)
+#
+# def par(x):
+#     return x % 2 == 0;
+# def impar(x):
+#     return not par(x);
+#
+# imprimeComCondicao(6, par)
+
+## Função lambda
+# res = lambda x: x * x;
+# print(res(5))
+
+# soma = lambda x, y: x + y
+# print(soma(10,15))
+
+## Aula prática 5 - Docstrings
+# def soma(x = 0,y = 0,z = 0):
+#     """
+#     Função que soma até 3 valores inteiros.
+#     :param x: Parâmetro opcional.
+#     :param y: Parâmetro opcional.
+#     :param z: Parâmetro opcional.
+#     :return: Retorna o resultado da soma dos 3 valores.
+#     """
+#     return x + y + z
+#
+# print(soma(1,2,3))
+# help(soma)
+
+## Exercício 1 - Aula prática 5
+# def validaInt(pergunta, min, max):
+#     x = int(input(pergunta))
+#     while ((x < min) or (x > max)):
+#         x = int(input(pergunta))
+#     return x
+#
+# def fatorial(num):
+#     """
+#     Função que calcula a fatorial de um número.
+#     :param num: Número a ser calculado.
+#     :return: Retorna a fatorial.
+#     """
+#     fat = 1
+#     if num == 0:
+#         return fat
+#     for i in range(1, num + 1, 1):
+#         fat *= i;
+#     return fat
+#
+# x = validaInt("Digite o número que deseja calcular a fatorial: ", 0, 50)
+# print("{}! = {}".format(x,fatorial(x)))
