@@ -600,3 +600,183 @@
 #
 # x = validaInt("Digite o número que deseja calcular a fatorial: ", 0, 50)
 # print("{}! = {}".format(x,fatorial(x)))
+
+## Aula 6 - Estruturas de dados
+# def soma(*num):
+#     soma = 0
+#     print("Tupla: {}".format(num))
+#     for i in num:
+#         soma += i;
+#     return soma;
+#
+# print("Resultado da soma de : {}".format(soma(1,2)))
+# print("Resultado da soma de : {}".format(soma(1,2,3,50,40,60,70,80,90,100)))
+
+## Manipulação de arrays
+## Dupla indexação
+# mochila = ["Camiseta", "Boné", "Óculos", "Carregador"]
+# for item in mochila:
+#     for letra in item:
+#         print(letra, end='')
+#     print()
+
+## Arrays dentro de Arrays
+# item = []
+# mercado = []
+#
+# for i in range(3):
+#     item.append(input("Digite o nome do produto: "))
+#     item.append(input("Digite ao quantidade do produto: "))
+#     item.append(float(input("Digite o preço do produto: ")))
+#     mercado.append(item[:])
+#     item.clear();
+# print(mercado)
+
+## forma simplificada com a listagem de compras e soma de total
+# mercado = []
+#
+# for i in range(3):
+#     nome = input("Digite o nome do produto: ")
+#     quantidade = int(input("Digite ao quantidade do produto: "))
+#     preco = float(input("Digite o preço do produto: "))
+#     mercado.append([nome, quantidade, preco])
+#
+# soma = 0
+#
+# print("Lista de compras")
+# print("-" * 20)
+# print("item | quantidade | valor unitário | total do item")
+#
+# for item in mercado:
+#     print("{} | {} | {} | {}".format(item[0], item[1], item[2], item[1] * item[2]))
+#     soma += item[1] * item[2]
+# print("-" * 20)
+# print("Total a ser pago: R$ {}".format(soma))
+
+## Aula Prática 6
+## Importação de bibliotecas
+# import math
+# import math as m
+# from math import sqrt
+# print(sqrt(25))
+
+## Exercício de manipulação de Listas
+# notas = [9, 7, 7, 10, 3, 9, 6, 6, 2]
+#
+# notas7 = notas.count(7)
+# print("Lista de notas: {}".format(notas))
+# print("Houveram {} notas 7".format(notas7))
+# notas[-1] = 4
+# print("Última nota da lista alterada para {}".format(notas[-1]))
+# print("Maior nota: {}".format(max(notas)))
+# notas.sort()
+# print("Notas ordenadas de forma crescente: {}".format(notas))
+# tam = len(notas)
+# acumulador = 0
+# for i in notas:
+#     acumulador += i
+# media = acumulador / tam
+# print("A média media das notas foi de : {}".format(media))
+
+## Exercício 1 - tuples - Aula prática 6
+# palavras = ("Marlon", "Maria", "Daiane", "Henrique", "Gabriel")
+#
+# for palavra in palavras:
+#     print("\n Palavra: {}. Vogais: ".format(palavra.upper()), end=' ')
+#     for letra in palavra:
+#         if letra.lower() in 'aeiou':
+#             print(letra.upper(), end=" ")
+
+## Exercício 2 - JOKENPO - Aula prática 6
+# from random import randint
+#
+# def validaInt(pergunta, min, max):
+#     x = int(input(pergunta))
+#     while ((x < min) or (x > max)):
+#         x = int(input(pergunta))
+#     return x
+#
+# def vencedor(jogador1, jogador2):
+#     global empate, v1, v2
+#     if jogador1 == 1: # Pedra
+#         if jogador2 == 1:  # Pedra
+#             empate += 1
+#         elif jogador2 == 2:  # Papel
+#             v2 += 1
+#         elif jogador2 == 3:  # Tesoura
+#             v1 += 1
+#     elif jogador1 == 2: # Papel
+#         if jogador2 == 1:  # Pedra
+#             v1 += 1
+#         elif jogador2 == 2:  # Papel
+#             empate += 1
+#         elif jogador2 == 3:  # Tesoura
+#             v2 += 1
+#     elif jogador1 == 3: # Tesoura
+#         if jogador2 == 1:  # Pedra
+#             v2 += 1
+#         elif jogador2 == 2:  # Papel
+#             v1 += 1
+#         elif jogador2 == 3:  # Tesoura
+#             empate += 1
+#     resultados = [v1, v2, empate]
+#     return resultados
+# # Programa principal
+# print("JOKENPO")
+# print("1 - Pedra")
+# print("2 - Papel")
+# print("3 - Tesoura")
+#
+# resultados = []
+# jogadas = []
+# v1 = 0
+# v2 = 0
+# empate = 0
+#
+# while True:
+#     j1 = validaInt("Escolha sua jogada: ", 0, 3)
+#     if not j1:
+#         break
+#     j2 = randint(1, 3)
+#     jogadas.append([j1, j2])
+#     resultados = vencedor(j1, j2)
+#
+#     for jogada in jogadas:
+#         for dado in jogada:
+#             print(dado, end=" ")
+#         print()
+# print("Número de vitórias do Jogador 1: {}".format(resultados[0]))
+# print("Número de vitórias do Jogador 2: {}".format(resultados[1]))
+# print("Número de empates: {}".format(resultados[2]))
+
+##
+# cadastro = {"nome": [], "sexo": [], "ano": []}
+#
+# def calculaIdade(ano):
+#     idade = 2021 - ano;
+#     return idade
+#
+# while True:
+#     terminar = input("Você deseja cadastrar uma pessoa? [S/N]")
+#     if terminar.upper() in "N":
+#         break
+#     if terminar.upper() not in "S":
+#         print("Digite 'S' para SIM ou 'N' para NÃO.")
+#         continue
+#     nome = input("Digite o nome da pessoa: ")
+#     sexo = input("Digite o sexo da pessoa [M/F]: ")
+#     ano = int(input("Digite o ano de nascimento da pessoa: "))
+#
+#     cadastro["nome"].append(nome)
+#     cadastro["sexo"].append(sexo.upper())
+#     cadastro["ano"].append(ano)
+#
+# totalIdade = 0
+#
+# print(len(cadastro))
+# for pessoa in cadastro.values():
+#     totalIdade += calculaIdade(pessoa)
+#
+# print(totalIdade)
+#
+# print("Total de cadastros efetuados: {}".format(len(cadastro)))
